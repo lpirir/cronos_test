@@ -1,7 +1,12 @@
 def get_part_list(a_vec):
     fragment = 100
     
-    return [a_vec[i:i + fragment] for i in range(0, len(a_vec), fragment)]
+    output = [a_vec[i:i + fragment] for i in range(0, len(a_vec), fragment)]
+
+    for i in range(0, len(output)):
+        output[i] = ([x.strip() for x in output[i]])
+
+    return output
 
 def create_sql_file(a_vec, file_name):
     str_sql = ''
